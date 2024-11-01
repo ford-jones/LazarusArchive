@@ -1,6 +1,6 @@
 import { ignition } from './server'
+import dotenv from 'dotenv'
 
-import * as dotenv from 'dotenv'
 const envConfig = dotenv.config()
 
 if (envConfig.error) {

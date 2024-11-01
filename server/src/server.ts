@@ -1,4 +1,4 @@
-import * as express from "express"
+import express from "express"
 import * as dotenv from "dotenv"
 import { router } from "./router"
 dotenv.config()
@@ -8,7 +8,7 @@ export const ignition = (): express.Express => {
 
     server.use(express.json())
 
-    server.use('/api/v1/blogPosts', router)
+    server.use('/api/v1/blog', router)
 
     server.use((req, res, next) => {
         res.sendStatus(200)
