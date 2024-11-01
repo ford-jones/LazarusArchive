@@ -1,0 +1,1 @@
+export const router = (): void => null

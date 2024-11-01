@@ -1,0 +1,27 @@
+{
+    "name": "lz_server",
+    "description": "HTTP server for Lazarus Engine blog.",
+    "authors": "Ford Jones",
+    "version": "1.0.0",
+    "main": "src/index.ts",
+    "license": "MIT",
+    "type": "module",
+    "scripts": {
+        "build": "tsx src/index.ts",
+        "dev": "tsx watch src/index.ts",
+        "start": "node dist/index.js"
+    },
+    "dependencies": {
+        "dotenv": "16.4.5",
+        "express": "4.21.1",
+        "http-status-codes": "2.3.0",
+        "mongodb": "6.10.0"
+    },
+    "devDependencies": {
+        "@types/node": "22.8.6",
+        "@types/express": "5.0.0",
+        "typescript": "5.6.3",
+        "ts-node": "10.9.2",
+        "tsx": "4.19.2"
+    }
+}
