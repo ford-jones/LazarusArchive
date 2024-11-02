@@ -15,7 +15,7 @@ router.get("/getAllPosts", async (req, res): Promise<void> => {
 
     const scanDocs: FindCursor<WithId<Document>> = data.map((blogPost: WithId<Document>) => blogPost)
     const documents: Array<WithId<Document>> = await scanDocs.toArray()
-    
+
     console.log("Data: ", data)
 
     res.status(StatusCodes.OK).json(documents)
@@ -25,9 +25,11 @@ router.post("/addPost", async (req, res): Promise<void> => {
     const database = await db()
     
     const data: BlogPost = req.body
-    await database.addDocument("posts", data)
+    const result = await database.addDocument("posts", data)
 
-    console.log("Data: ", data)
-
-    res.status(StatusCodes.OK)
+    if(result.acknowledged == true) {
+        res.status(StatusCodes.OK).json(result)
+    } else {
+        res.status(StatusCodes.INTERNAL_SERVER_ERROR)
+    }
 })
