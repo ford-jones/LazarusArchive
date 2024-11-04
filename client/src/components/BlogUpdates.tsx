@@ -39,6 +39,11 @@ export default function BlogUpdates(): React.ReactNode {
                             <p>{post.date}</p>
                             <p>{post.title}</p>
                             <p>{post.description}</p>
+                            {
+                                post.imageUrl != "" 
+                                    ? <img src={post.imageUrl} alt="lazarusImage" style={{aspectRatio: "1", objectFit: "contain"}} />
+                                    : null
+                            }
                         </div>
                     ))
                     : <p>Uh oh! Something went wrong.</p>
