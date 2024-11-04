@@ -1,15 +1,14 @@
+import BlogUpdates from "../../components/BlogUpdates"
 import React from "react"
 import NavBar from "../../components/NavBar"
-import { getBlogPosts } from "@/utils/api"
 
-export default async function Blog(): Promise<React.JSX.Element> {
-    const blogPosts = await getBlogPosts()
 
-    console.log("blogPosts: ", blogPosts)
+export default function Blog(): React.ReactNode {
     return(
         <>
             <h1>Blog</h1>
             <NavBar />
+            <BlogUpdates />
         </>
     )
 }
