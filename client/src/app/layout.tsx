@@ -1,30 +1,24 @@
 import type { Metadata } from "next";
-// import { createContext } from "react";
-// import { getBlogPosts } from "@/utils/api";
-// import { BlogPost } from "@/utils/types";
-// import { BlogContext } from "../components/ContextProvider";
+import { UserProvider } from "@auth0/nextjs-auth0/client";
 
 export const metadata: Metadata = {
   title: "Lazarus Engine",
   description: "Dev Blog by Ford Jones tracking the development and progression of Lazarus: A quake-like 3D game engine written in C++ with OpenGL."
 };
-// const BlogContext = createContext([] as BlogPost[])
 
 export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // const blogPosts = await getBlogPosts()
-
   
   return (
     <html lang="en">
-      <body>
-        {/* <BlogContext.Provider value={blogPosts as BlogPost[]}> */}
-          {children}
-        {/* </BlogContext.Provider> */}
-      </body>
+      <UserProvider>
+        <body>
+            {children}
+        </body>
+      </UserProvider>
     </html>
   );
 }
