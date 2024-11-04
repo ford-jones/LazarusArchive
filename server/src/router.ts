@@ -9,6 +9,13 @@ dotenv.config()
 
 export const router: express.Router = express.Router()
 
+router.use((req, res, next) => {
+    res.append('access-control-allow-origin', "*");
+    res.append('access-control-allow-methods', 'GET,PUT,POST,PATCH,DELETE,OPTIONS');
+    res.append('access-control-allow-headers', 'access-control-allow-origin, Content-Type');
+    next();
+})
+
 router.get("/getAllPosts", async (req, res): Promise<void> => {
     const database = await db()
     const data = await database.getAll("posts")
