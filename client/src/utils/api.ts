@@ -22,13 +22,15 @@ export const getBlogPosts = async (): Promise<Array<BlogPost> | void> => {
 }
 
 export const addBlogPost = async (post: BlogPost): Promise<void> => {
-    const data = await fetch(`${_endpoint}/addPost`, {
+    console.log("API: ", post)
+    const data = await fetch(`http://localhost:3000/api/v1/blog/addPost`, {
         method: "POST",
-        body: JSON.stringify(post),
         mode: "cors",
         headers: {
+            "Content-Type": "Application/json",
             "Access-Control-Allow-Origin": "*"
-        }
+        },
+        body: JSON.stringify(post)
     })
 
     if(!data.ok) {
