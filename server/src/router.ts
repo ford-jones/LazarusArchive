@@ -56,13 +56,13 @@ router.post("/addPost", async (req, res): Promise<void> => {
 router.post("/addChangeLog", async (req, res): Promise<void> => {
     const database = await db()
     
-    const data: string = req.body
+    const data: ChangeLog = req.body
     console.log(data)
-    // const result = await database.addDocument("changeLogs", data)
+    const result = await database.addDocument("changeLogs", data)
 
-    // if(result.acknowledged == true) {
-    //     res.status(StatusCodes.OK).json(result)
-    // } else {
-    //     res.status(StatusCodes.INTERNAL_SERVER_ERROR)
-    // }
+    if(result.acknowledged == true) {
+        res.status(StatusCodes.OK).json(result)
+    } else {
+        res.status(StatusCodes.INTERNAL_SERVER_ERROR)
+    }
 })
