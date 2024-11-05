@@ -1,4 +1,4 @@
-import { ignition } from '../api/server'
+import { ignition } from './server'
 import dotenv from 'dotenv'
 
 const envConfig = dotenv.config()
