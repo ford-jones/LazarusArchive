@@ -24996,11 +24996,11 @@ var require_cjs = __commonJS({
   }
 });
 
-// src/server.ts
+// api/server.ts
 var import_express2 = __toESM(require_express2(), 1);
 var dotenv3 = __toESM(require_main(), 1);
 
-// src/db.ts
+// api/db.ts
 var import_mongodb = __toESM(require_lib(), 1);
 var dotenv = __toESM(require_main(), 1);
 dotenv.config();
@@ -25030,7 +25030,7 @@ var db = async () => {
   };
 };
 
-// src/router.ts
+// api/router.ts
 var import_http_status_codes = __toESM(require_cjs(), 1);
 var import_express = __toESM(require_express2(), 1);
 var import_dotenv = __toESM(require_main(), 1);
@@ -25074,12 +25074,12 @@ router.post("/addChangeLog", async (req, res) => {
   console.log(data);
 });
 
-// src/server.ts
+// api/server.ts
 dotenv3.config();
 var ignition = () => {
   const server2 = (0, import_express2.default)();
   server2.use(import_express2.default.json());
-  server2.use("/api/v1/blog", router);
+  server2.use("/", router);
   server2.use((req, res, next) => {
     res.sendStatus(200);
   });

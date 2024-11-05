@@ -8,7 +8,7 @@ export const ignition = (): express.Express => {
 
     server.use(express.json())
 
-    server.use('/api/v1/blog', router)
+    server.use('/', router)
 
     server.use((req, res, next) => {
         res.sendStatus(200)
