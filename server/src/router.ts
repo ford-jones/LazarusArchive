@@ -1,6 +1,6 @@
 import { db } from "./db"
 import { FindCursor, WithId, Document } from "mongodb"
-import { BlogPost } from "../types"
+import { BlogPost, ChangeLog } from "../types"
 
 import { StatusCodes } from "http-status-codes"
 import express from "express"
@@ -28,6 +28,18 @@ router.get("/getAllPosts", async (req, res): Promise<void> => {
     res.status(StatusCodes.OK).json(documents)
 })
 
+router.get("/getAllChangeLogs", async (req, res): Promise<void> => {
+    const database = await db()
+    const data = await database.getAll("changeLogs")
+
+    const scanDocs: FindCursor<WithId<Document>> = data.map((blogPost: WithId<Document>) => blogPost)
+    const documents: Array<WithId<Document>> = await scanDocs.toArray()
+
+    console.log("Data: ", data)
+
+    res.status(StatusCodes.OK).json(documents)
+})
+
 router.post("/addPost", async (req, res): Promise<void> => {
     const database = await db()
     
@@ -39,4 +51,18 @@ router.post("/addPost", async (req, res): Promise<void> => {
     } else {
         res.status(StatusCodes.INTERNAL_SERVER_ERROR)
     }
+})
+
+router.post("/addChangeLog", async (req, res): Promise<void> => {
+    const database = await db()
+    
+    const data: string = req.body
+    console.log(data)
+    // const result = await database.addDocument("changeLogs", data)
+
+    // if(result.acknowledged == true) {
+    //     res.status(StatusCodes.OK).json(result)
+    // } else {
+    //     res.status(StatusCodes.INTERNAL_SERVER_ERROR)
+    // }
 })

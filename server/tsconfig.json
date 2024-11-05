@@ -1,25 +1,23 @@
 {
-    "compilerOptions": {
-      "target": "ES2022",
-  
-      "module": "ES2022",
-      "moduleResolution": "Bundler",
-      "allowJs": true,
-      
+  "compilerOptions": {
+      "module": "commonjs",
       "esModuleInterop": true,
-      "forceConsistentCasingInFileNames": true,
-  
+      "allowSyntheticDefaultImports": true,
+      "target": "es6",
       "noImplicitAny": true,
-      "allowUnusedLabels": false,
-      "allowUnreachableCode": false,
-  
-      "skipLibCheck": true,
-    },
-    "include": [
-      "./src"
-    ],
-    "ts-node": {
-      "esm": true,
-      "experimentalSpecifierResolution": "node"
-    },
+      "moduleResolution": "node",
+      "sourceMap": true,
+      "outDir": "dist",
+      "baseUrl": ".",
+      "paths": {
+          "*": ["node_modules/*", "src/types/*"]
+      }
+  },
+  "include": [
+    "./src"
+  ],
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
+  },
   }
