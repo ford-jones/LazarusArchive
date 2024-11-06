@@ -26,6 +26,7 @@ export const db = async (): Promise<DatabaseManager> => {
                 const blogPosts = db
                 .collection(collectionId)
                 .find()
+                .sort({date: -1})
 
                 return Promise.resolve(blogPosts)
 
