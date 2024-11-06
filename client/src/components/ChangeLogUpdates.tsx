@@ -4,11 +4,18 @@ import React, { useState, useEffect, useCallback } from "react"
 import { getChangeLogs } from "@/utils/api"
 import { ChangeLog } from "@/utils/types"
 
+interface FormattedNote {
+    version: string,
+    newFeatures: Array<string> | undefined,
+    bugFixes: Array<string> | undefined,
+    otherChanges: Array<string> | undefined
+}
+
 export default function BlogUpdates(): React.ReactNode {
-    const [logs, setLogs] = useState<Array<ChangeLog>>([])
+    const [logs, setLogs] = useState<Array<FormattedNote>>([])
     const [loading, setLoading] = useState<boolean>(true)
     
-    const performSideEffects = useCallback((allLogs: ChangeLog[]) => {
+    const performSideEffects = useCallback((allLogs: Array<FormattedNote>) => {
         setLogs(allLogs)
         setLoading(false)
     }, [])
@@ -20,11 +27,36 @@ export default function BlogUpdates(): React.ReactNode {
     }, [logs])
         
     const update = async () => {
-        const changeLogs = await getChangeLogs()
+        const changeLogs = await getChangeLogs() as Array<ChangeLog>
         if((changeLogs)) {
-            performSideEffects(changeLogs)
+            performSideEffects(parseMarkdown(changeLogs))
         }
-        
+    }
+
+    const parseMarkdown = (allLogs: Array<ChangeLog>): Array<FormattedNote> => {
+        return allLogs.map((data) => {
+            const seperateLogs = data.changeLog.split("*")
+            const version = (seperateLogs.shift() as string).substring(2)
+            const newFeatures = seperateLogs.filter((logData) => logData.includes("Feat:"))
+            const bugFixes = seperateLogs.filter((logData) => logData.includes("Fix:"))
+
+            const otherChanges = seperateLogs.filter((logData) => {
+                const index = logData.indexOf("): ")
+                const identifier = logData.substring(index, index + 7)
+
+                return identifier !== "): Fix:" && 
+                       identifier !== "): fix:" &&
+                       identifier !== "): Feat" &&
+                       identifier !== "): feat"
+            })
+
+            return {
+                version,
+                newFeatures,
+                bugFixes,
+                otherChanges
+            }
+        })
     }
     
     return(
@@ -34,8 +66,44 @@ export default function BlogUpdates(): React.ReactNode {
                     ? <p>loading...</p>
                     : logs 
                     ? logs.map((log, i) => (
-                        <div key={i}>
-                            <p>{log.changeLog}</p>
+                        <div key={i} style={{marginBottom: "10dvh"}}>
+                            <h4>{log.version}</h4>
+                            {   
+                                log.newFeatures?.length
+                                ? <>
+                                    <p>New Features:</p>
+                                    <ul>
+                                        {
+                                            log.newFeatures.map((feature, x) => <li key={x}>{feature.split(":")[3]}</li>)
+                                        }
+                                    </ul>
+                                  </>
+                                : null
+                            }
+                            {   
+                                log.bugFixes?.length
+                                ? <>
+                                    <p>Bug Fixes:</p>
+                                    <ul>
+                                        {
+                                            log.bugFixes.map((fix, y) => <li key={y}>{fix.split(":")[3]}</li>)
+                                        }
+                                    </ul>
+                                  </>
+                                : null
+                            }
+                            {   
+                                log.otherChanges?.length
+                                ? <>
+                                    <p>Other Changes:</p>
+                                    <ul>
+                                        {
+                                            log.otherChanges.map((change, z) => <li key={z}>{change.split(":")[3]}</li>)
+                                        }
+                                    </ul>
+                                  </>
+                                : null
+                            }
                         </div>
                     ))
                     : <p>Uh oh! Something went wrong.</p>
