@@ -58,7 +58,7 @@ router.post("/addChangeLog", async (req, res): Promise<void> => {
     
     const data: ChangeLog = req.body
     console.log(data)
-    const result = await database.addDocument("changeLogs", data)
+    const result = await database.addDocument("changeLogs", {...data, date: new Date().toISOString()})
 
     if(result.acknowledged == true) {
         res.status(StatusCodes.OK).json(result)
