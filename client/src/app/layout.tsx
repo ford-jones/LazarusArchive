@@ -19,6 +19,7 @@ export default async function RootLayout({
           background: "black",
           color: "whitesmoke",
           overflowX: "hidden",
+          fontSize: "19px"
         }}>
             {children}
         </body>

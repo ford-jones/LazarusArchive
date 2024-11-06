@@ -35,9 +35,8 @@ export default function BlogUpdates(): React.ReactNode {
                     : posts 
                     ? posts.map((post, i) => (
                         <div key={i}>
-                            <h3>Ford Jones</h3>
+                            <h4>{post.title}</h4>
                             <p>{post.date}</p>
-                            <p>{post.title}</p>
                             <p>{post.description}</p>
                             {
                                 post.imageUrl != "" 
