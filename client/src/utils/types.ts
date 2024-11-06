@@ -9,9 +9,7 @@ export interface BlogPost extends Details {
 }
 
 export interface ChangeLog extends Details {
-    whatsNew:           string | undefined,
-    bugFixes:           string | undefined,
-    breakingChanges:    string | undefined
+    changeLog: string
 }
 
 export type CollectionId = "posts" | "changeLogs"
