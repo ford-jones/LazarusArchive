@@ -15,7 +15,11 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <UserProvider>
-        <body>
+        <body style={{
+          background: "black",
+          color: "whitesmoke",
+          overflowX: "hidden",
+        }}>
             {children}
         </body>
       </UserProvider>

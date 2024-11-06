@@ -66,7 +66,7 @@ export default function BlogUpdates(): React.ReactNode {
                     ? <p>loading...</p>
                     : logs 
                     ? logs.map((log, i) => (
-                        <div key={i} style={{marginBottom: "10dvh"}}>
+                        <div key={i}>
                             <h4>{log.version}</h4>
                             {   
                                 log.newFeatures?.length
@@ -104,6 +104,7 @@ export default function BlogUpdates(): React.ReactNode {
                                   </>
                                 : null
                             }
+                            <div style={{width: "100dvw", background: "whitesmoke", height: "1px", marginTop: "5dvh"}}></div>
                         </div>
                     ))
                     : <p>Uh oh! Something went wrong.</p>

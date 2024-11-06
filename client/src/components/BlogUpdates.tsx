@@ -44,6 +44,7 @@ export default function BlogUpdates(): React.ReactNode {
                                     ? <img src={post.imageUrl} alt="lazarusImage" style={{aspectRatio: "1", objectFit: "contain"}} />
                                     : null
                             }
+                            <div style={{width: "100dvw", background: "whitesmoke", height: "1px", marginTop: "5dvh"}}></div>
                         </div>
                     ))
                     : <p>Uh oh! Something went wrong.</p>

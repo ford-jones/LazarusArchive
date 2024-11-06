@@ -5,17 +5,17 @@ import { usePathname } from "next/navigation"
 export default function NavBar(): React.JSX.Element {
     return(
         <>
-            <div>
-                <Link href={"/"}>
+            <div style={{display: "flex", flexDirection: "row", justifyContent: "space-around"}}>
+                <Link href={"/"} style={{color: "whitesmoke"}}>
                     Home
                 </Link>
-                <Link href={"/blog"}>
+                <Link href={"/blog"} style={{color: "whitesmoke"}}>
                     Blog
                 </Link>
-                <Link href={"/changeLogs"}>
+                <Link href={"/changeLogs"} style={{color: "whitesmoke"}}>
                     Release Notes
                 </Link>
-                <Link href={"/downloads"}>
+                <Link href={"/downloads"} style={{color: "whitesmoke"}}>
                     Downloads
                 </Link>
             </div>
