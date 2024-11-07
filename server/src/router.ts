@@ -23,8 +23,6 @@ router.get("/getAllPosts", async (req, res): Promise<void> => {
     const scanDocs: FindCursor<WithId<Document>> = data.map((blogPost: WithId<Document>) => blogPost)
     const documents: Array<WithId<Document>> = await scanDocs.toArray()
 
-    console.log("Data: ", data)
-
     res.status(StatusCodes.OK).json(documents)
 })
 
@@ -34,8 +32,6 @@ router.get("/getAllChangeLogs", async (req, res): Promise<void> => {
 
     const scanDocs: FindCursor<WithId<Document>> = data.map((blogPost: WithId<Document>) => blogPost)
     const documents: Array<WithId<Document>> = await scanDocs.toArray()
-
-    console.log("Data: ", data)
 
     res.status(StatusCodes.OK).json(documents)
 })
@@ -57,7 +53,6 @@ router.post("/addChangeLog", async (req, res): Promise<void> => {
     const database = await db()
     
     const data: ChangeLog = req.body
-    console.log(data)
     const result = await database.addDocument("changeLogs", {...data, date: new Date().toISOString()})
 
     if(result.acknowledged == true) {

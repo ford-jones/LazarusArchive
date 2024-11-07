@@ -37,7 +37,6 @@ export const getChangeLogs = async (): Promise<Array<ChangeLog> | void> => {
 }
 
 export const addBlogPost = async (post: BlogPost): Promise<void> => {
-    console.log("API: ", post)
     const data = await fetch(`${_endpoint}/addPost`, {
         method: "POST",
         mode: "cors",
