@@ -12,10 +12,10 @@ export default function ChangeLogs(): React.ReactNode {
                 background: "black",
                 top: "0px"
             }}>
-                <h1 style={{textAlign: "center"}}>Release Notes:</h1>
+                <h1 style={{textAlign: "center", textDecoration: "underline"}}>Release Notes:</h1>
                 <NavBar />
             </div>
-            <div style={{paddingTop: "95px"}}>
+            <div style={{paddingTop: "105px"}}>
                 <ChangeLogUpdates />
             </div>
         </>

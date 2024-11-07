@@ -13,10 +13,10 @@ export default function Blog(): React.ReactNode {
                 background: "black",
                 top: "0px"
             }}>
-                <h1 style={{textAlign: "center"}}>Blog</h1>
+                <h1 style={{textAlign: "center", textDecoration: "underline"}}>Blog:</h1>
                 <NavBar />
             </div>
-            <div style={{paddingTop: "95px"}}>
+            <div style={{paddingTop: "105px"}}>
                 <BlogUpdates />
             </div>
         </>
