@@ -13,13 +13,13 @@ export default function Downloads(): React.JSX.Element {
             }}>
                 <h1 style={{textAlign: "center", textDecoration: "underline"}}>Downloads:</h1>
                 <NavBar />
-                <div style={{paddingTop: "105px"}}>
+            </div>
+            <div style={{paddingTop: "105px"}}>
                     <ul>
                         <li>
                             <a style={{color: "whitesmoke"}} href="https://github.com/ford-jones/Lazarus/archive/refs/tags/v0.1.2.zip">0.1.2-alpha</a>
                         </li>
                     </ul>
-                </div>
             </div>
         </>
     )

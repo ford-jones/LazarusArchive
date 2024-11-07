@@ -1,11 +1,9 @@
 import { BlogPost, ChangeLog } from "./types"
-import dotenv from "dotenv"
-dotenv.config()
 
-const _endpoint = process.env.SERVER_ENDPOINT as string
+const _endpoint = process.env.NEXT_PUBLIC_SERVER_ENDPOINT as string
 
 export const getBlogPosts = async (): Promise<Array<BlogPost> | void> => {
-    const data = await fetch(`http://localhost:3000/getAllPosts`, {
+    const data = await fetch(`${_endpoint}/getAllPosts`, {
         mode: "cors",
         headers: {
             "Access-Control-Allow-Origin": "*"
@@ -22,7 +20,7 @@ export const getBlogPosts = async (): Promise<Array<BlogPost> | void> => {
 }
 
 export const getChangeLogs = async (): Promise<Array<ChangeLog> | void> => {
-    const data = await fetch(`http://localhost:3000/getAllChangeLogs`, {
+    const data = await fetch(`${_endpoint}/getAllChangeLogs`, {
         mode: "cors",
         headers: {
             "Access-Control-Allow-Origin": "*"
@@ -40,7 +38,7 @@ export const getChangeLogs = async (): Promise<Array<ChangeLog> | void> => {
 
 export const addBlogPost = async (post: BlogPost): Promise<void> => {
     console.log("API: ", post)
-    const data = await fetch(`http://localhost:3000/addPost`, {
+    const data = await fetch(`${_endpoint}/addPost`, {
         method: "POST",
         mode: "cors",
         headers: {

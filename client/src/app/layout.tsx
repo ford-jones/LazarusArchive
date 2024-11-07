@@ -16,8 +16,8 @@ export default async function RootLayout({
     <html lang="en">
       <UserProvider>
         <body style={{
-          background: "black",
-          color: "whitesmoke",
+          background: "#111c1c",
+          color: "#feffe8",
           overflowX: "hidden",
           fontSize: "19px"
         }}>
