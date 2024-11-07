@@ -8,7 +8,8 @@ export default function Home(): React.JSX.Element {
         position: "fixed", 
         width: "100dvw", 
         background: "black",
-        top: "0px"
+        top: "0px",
+        left: "0px"
       }}>
         <h1 style={{textAlign: "center", textDecoration: "underline"}}>Lazarus Engine - Archive:</h1>
         <NavBar />
@@ -16,7 +17,7 @@ export default function Home(): React.JSX.Element {
       <div style={{paddingTop: "105px"}}>
         <p>
           Welcome to the development log for Lazarus engine, a 3D game engine written in the C++17 standard. 
-          The engine provides an abstraction in the form of an API over OpenGL 4.1, GLFW and FreeType2 developed by Ford Jones.
+          The engine provides an abstraction in the form of an API over OpenGL 4.1, GLFW, FMOD and FreeType2 developed by Ford Jones.
         </p>
         <p>
         {`I’ve always loved video games and as a kid was completely enamored by the graphics of PlayStation and Xbox. I’d always 

@@ -10,7 +10,8 @@ export default function ChangeLogs(): React.ReactNode {
                 position: "fixed", 
                 width: "100dvw", 
                 background: "black",
-                top: "0px"
+                top: "0px",
+                left: "0px"
             }}>
                 <h1 style={{textAlign: "center", textDecoration: "underline"}}>Release Notes:</h1>
                 <NavBar />

@@ -9,7 +9,8 @@ export default function Downloads(): React.JSX.Element {
               position: "fixed", 
               width: "100dvw", 
               background: "black",
-              top: "0px"
+              top: "0px",
+              left: "0px"
             }}>
                 <h1 style={{textAlign: "center", textDecoration: "underline"}}>Downloads:</h1>
                 <NavBar />

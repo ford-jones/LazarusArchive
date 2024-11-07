@@ -11,7 +11,8 @@ export default function Blog(): React.ReactNode {
                 position: "fixed", 
                 width: "100dvw", 
                 background: "black",
-                top: "0px"
+                top: "0px",
+                left: "0px"
             }}>
                 <h1 style={{textAlign: "center", textDecoration: "underline"}}>Blog:</h1>
                 <NavBar />
