@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     description: "Dev logs documenting the creation and maintenance of Lazarus.",
     siteName: "Lazarus Engine",
     images: [{
-      url: "https://drive.google.com/file/d/1P2FZN6yw1bd0Ga546pEk23WlyNuOE_3J/view?usp=sharing",
+      url: "https://drive.google.com/thumbnail?id=1P2FZN6yw1bd0Ga546pEk23WlyNuOE_3J&sz=w1000",
     }]
   }
 }
