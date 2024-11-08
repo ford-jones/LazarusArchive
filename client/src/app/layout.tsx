@@ -3,8 +3,18 @@ import { UserProvider } from "@auth0/nextjs-auth0/client";
 
 export const metadata: Metadata = {
   title: "Lazarus Engine",
-  description: "Dev Blog by Ford Jones tracking the development and progression of Lazarus: A quake-like 3D game engine written in C++ with OpenGL."
-};
+  description: "Dev Blog by Ford Jones tracking the development and progression of Lazarus: A quake-like 3D game engine written in C++ with OpenGL.",
+  openGraph: {
+    type: "website",
+    url: "https://lazarusengine.xyz/",
+    title: "Lazarus Engine - Archive",
+    description: "Dev logs documenting the creation and maintenance of Lazarus.",
+    siteName: "Lazarus Engine",
+    images: [{
+      url: "https://drive.google.com/file/d/1P2FZN6yw1bd0Ga546pEk23WlyNuOE_3J/view?usp=sharing",
+    }]
+  }
+}
 
 export default async function RootLayout({
   children,
