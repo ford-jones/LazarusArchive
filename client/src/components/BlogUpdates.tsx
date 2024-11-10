@@ -37,7 +37,7 @@ export default function BlogUpdates(): React.ReactNode {
                         <div key={i}>
                             <h4>{post.title}</h4>
                             <p>{post.date}</p>
-                            <p>{post.description}</p>
+                            {(post.description.split("%")).map((line) => <p key={line}>{line.replace("%", "")}</p>)}
                             {
                                 post.imageUrl != "" 
                                     ? <img src={post.imageUrl} alt="lazarusImage" style={{aspectRatio: "1", objectFit: "contain"}} />
