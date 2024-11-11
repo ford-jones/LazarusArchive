@@ -36,7 +36,7 @@ export default function BlogUpdates(): React.ReactNode {
     const parseMarkdown = (allLogs: Array<ChangeLog>): Array<FormattedNote> => {
         return allLogs.map((data) => {
             const seperateLogs = data.changeLog.split("*")
-            const version = (seperateLogs.shift() as string).substring(2)
+            const version = data.title
             const newFeatures = seperateLogs.filter((logData) => logData.includes("Feat:"))
             const bugFixes = seperateLogs.filter((logData) => logData.includes("Fix:"))
 
