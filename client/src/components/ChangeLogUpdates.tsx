@@ -37,6 +37,7 @@ export default function BlogUpdates(): React.ReactNode {
         return allLogs.map((data) => {
             const seperateLogs = data.changeLog.split("*")
             const version = data.title
+            seperateLogs.shift()
             const newFeatures = seperateLogs.filter((logData) => logData.includes("Feat:"))
             const bugFixes = seperateLogs.filter((logData) => logData.includes("Fix:"))
 
