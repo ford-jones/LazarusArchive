@@ -18,6 +18,12 @@ export default function Downloads(): React.JSX.Element {
             <div style={{paddingTop: "105px"}}>
                     <ul>
                         <li>
+                            <a style={{color: "whitesmoke"}} href="https://github.com/ford-jones/Lazarus/archive/refs/tags/v0.1.7.zip">0.1.7-alpha</a>
+                        </li>
+                        <li>
+                            <a style={{color: "whitesmoke"}} href="https://github.com/ford-jones/Lazarus/archive/refs/tags/v0.1.6.zip">0.1.6-alpha</a>
+                        </li>
+                        <li>
                             <a style={{color: "whitesmoke"}} href="https://github.com/ford-jones/Lazarus/archive/refs/tags/v0.1.3.zip">0.1.3-alpha</a>
                         </li>
                         <li>
