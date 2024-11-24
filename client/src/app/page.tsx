@@ -37,7 +37,7 @@ export default function Home(): React.JSX.Element {
           <li>TrueType and OpenType font loading</li>
           <li>Wavefront mesh loading and rendering</li>
           <li>Translation and rotation transformations across camera, mesh and light assets</li>
-          <li>Spacial audio</li>
+          <li>Spatial audio</li>
         </ul>
         <p>
           {`The name Lazarus comes from the story of "Lazarus from Bethany" - a figure from the gospel who died and was reanimated; 
