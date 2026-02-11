@@ -54,9 +54,8 @@ export default function Home(): React.JSX.Element {
         <p>
           Find the source code for the project <a style={{color: "whitesmoke"}}href="https://github.com/ford-jones/Lazarus">here</a>. 
         </p>
-        <p>Contact me:</p>
         <p>Email: <a style={{color: "whitesmoke"}}href="mail:fordnicholasjones@gmail.com">fordjones@tutamail.com</a></p>
-        <p>Matrix: <a style={{color: "whitesmoke"}}href="#lazarusengine:matrix.org">#lazarusengine:matrix.org</a></p>
+        <p>Matrix: <a style={{color: "whitesmoke"}}href="@public_member:matrix.org">@public_member:matrix.org</a>, <a style={{color: "whitesmoke"}}href="#lazarusengine:matrix.org">#lazarusengine:matrix.org</a></p>
       </div>
     </>
   );
