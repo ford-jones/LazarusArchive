@@ -43,8 +43,7 @@ export default function Home(): React.JSX.Element {
           <li>Spatial audio</li>
         </ul>
         <p>
-          {`The name Lazarus comes from the story of "Lazarus from Bethany" - a figure from the gospel who died and was reanimated; 
-            the first zombie. This engine was named as such due to the fact it is built over OpenGL 4.1, a 2010 release of the now 
+          {`Lazarus was reanimated as the first zombie. This engine was named as such due to the fact it is built over OpenGL 4.1, a 2010 release of the now 
             deprecated OpenGL graphics framework. The reason for this choice was simply that at the time I started I had no access to 
             a Windows machine and Apple had dropped all support for OpenGL in favor of their proprietary framework - METAL. This meant 
             that all hope for a cross-platform API using modern graphics libraries would be an impossibility without rewriting it all 
@@ -55,9 +54,9 @@ export default function Home(): React.JSX.Element {
         <p>
           Find the source code for the project <a style={{color: "whitesmoke"}}href="https://github.com/ford-jones/Lazarus">here</a>. 
         </p>
-        <p>If you have a question, want to chat or are eager to collaborate contact me at:</p>
-        <a style={{color: "whitesmoke"}}href="mail:fordnicholasjones@gmail.com">fordjones@tutamail.com</a>
-        <a style={{color: "whitesmoke"}}href="#lazarusengine:matrix.org">#lazarusengine:matrix.org</a>
+        <p>Contact me:</p>
+        <p>Email: <a style={{color: "whitesmoke"}}href="mail:fordnicholasjones@gmail.com">fordjones@tutamail.com</a></p>
+        <p>Matrix: <a style={{color: "whitesmoke"}}href="#lazarusengine:matrix.org">#lazarusengine:matrix.org</a></p>
       </div>
     </>
   );
