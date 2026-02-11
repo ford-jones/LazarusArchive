@@ -36,7 +36,10 @@ export default function Home(): React.JSX.Element {
           <li>Mouse and keyboard event monitoring</li>
           <li>TrueType and OpenType font loading</li>
           <li>Wavefront mesh loading and rendering</li>
-          <li>Translation and rotation transformations across camera, mesh and light assets</li>
+          <li>Glb model loading and rendering</li>
+          <li>Instanced rendering</li>
+          <li>Plug and play shader pipeline</li>
+          <li>Translation, rotation and scale transformations across camera, mesh and light assets</li>
           <li>Spatial audio</li>
         </ul>
         <p>
@@ -53,7 +56,8 @@ export default function Home(): React.JSX.Element {
           Find the source code for the project <a style={{color: "whitesmoke"}}href="https://github.com/ford-jones/Lazarus">here</a>. 
         </p>
         <p>If you have a question, want to chat or are eager to collaborate contact me at:</p>
-        <a style={{color: "whitesmoke"}}href="mail:fordnicholasjones@gmail.com">fordnicholasjones@gmail.com</a>
+        <a style={{color: "whitesmoke"}}href="mail:fordnicholasjones@gmail.com">fordjones@tutamail.com</a>
+        <a style={{color: "whitesmoke"}}href="#lazarusengine:matrix.org">#lazarusengine:matrix.org</a>
       </div>
     </>
   );
