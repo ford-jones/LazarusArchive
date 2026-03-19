@@ -8,7 +8,7 @@ export default function NavBar(): React.JSX.Element {
 
     return(
         <>
-            <div style={{display: "flex", flexDirection: "row", justifyContent: "space-around"}}>
+            <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between", width: "80%", margin:"auto", padding: "19px 0px"}}>
                 <Link href={"/"} style={path === "/" ? {color: "whitesmoke", textDecoration: "underline"} : {color: "whitesmoke", textDecoration: "none"}}>
                     Home
                 </Link>

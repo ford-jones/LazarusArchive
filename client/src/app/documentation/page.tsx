@@ -9,7 +9,7 @@ export default function Documentation(): React.ReactNode {
             <div style={{
                 zIndex: 1, 
                 position: "fixed", 
-                width: "100dvw", 
+                width: "100%", 
                 background: "black",
                 top: "0px",
                 left: "0px"
