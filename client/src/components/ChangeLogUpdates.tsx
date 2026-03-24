@@ -105,7 +105,7 @@ export default function BlogUpdates(): React.ReactNode {
                                   </>
                                 : null
                             }
-                            <div style={{width: "100dvw", background: "whitesmoke", height: "1px", marginTop: "5dvh"}}></div>
+                            <div style={{width: "100%", background: "whitesmoke", height: "1px", marginTop: "5dvh"}}></div>
                         </div>
                     ))
                     : <p>Uh oh! Something went wrong.</p>

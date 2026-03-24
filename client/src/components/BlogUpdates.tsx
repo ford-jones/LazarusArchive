@@ -40,10 +40,10 @@ export default function BlogUpdates(): React.ReactNode {
                             {(post.description.split("%")).map((line) => <p key={line}>{line.replace("%", "")}</p>)}
                             {
                                 post.imageUrl != "" 
-                                    ? <img src={post.imageUrl} alt="lazarusImage" style={{aspectRatio: "1", objectFit: "contain"}} />
+                                    ? <img src={post.imageUrl} alt="lazarusImage" style={{width: "100%", objectFit: "cover"}} />
                                     : null
                             }
-                            <div style={{width: "100dvw", background: "whitesmoke", height: "1px", marginTop: "5dvh"}}></div>
+                            <div style={{width: "100%", background: "whitesmoke", height: "1px", marginTop: "50px"}}></div>
                         </div>
                     ))
                     : <p>Uh oh! Something went wrong.</p>

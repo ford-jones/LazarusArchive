@@ -28,13 +28,13 @@ export default function Docs(): React.ReactNode {
         loading
             ? <p>Loading...</p>
             :
-            <div>
+            <div style={{width:"80%", margin:"auto"}}>
                 <MarkdownPreview 
                     source={markdownSource} 
                     style={{
-                        width: "80%",
-                        padding: "2%",
-                        margin: "auto"
+                        // width: "100%",
+                        padding: "80px 20px",
+                        // margin: "auto"
                     }} 
                 />
             </div>

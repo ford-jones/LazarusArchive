@@ -9,7 +9,7 @@ export default function Blog(): React.ReactNode {
             <div style={{
                 zIndex: 1, 
                 position: "fixed", 
-                width: "100dvw", 
+                width: "100%", 
                 background: "black",
                 top: "0px",
                 left: "0px"
@@ -17,7 +17,7 @@ export default function Blog(): React.ReactNode {
                 <h1 style={{textAlign: "center", textDecoration: "underline"}}>Blog:</h1>
                 <NavBar />
             </div>
-            <div style={{paddingTop: "105px"}}>
+            <div style={{paddingTop: "160px", width:"80%", margin:"auto"}}>
                 <BlogUpdates />
             </div>
         </>

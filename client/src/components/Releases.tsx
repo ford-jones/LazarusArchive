@@ -40,7 +40,7 @@ export default function Releases(): React.ReactNode {
         }
 
     return(
-        <ul>
+        <ul style={{padding: "20px", margin: "0px"}}>
             {
                 loading 
                     ? <p>loading...</p>

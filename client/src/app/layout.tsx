@@ -29,7 +29,8 @@ export default async function RootLayout({
           background: "#111c1c",
           color: "#feffe8",
           overflowX: "hidden",
-          fontSize: "19px"
+          fontSize: "19px",
+          margin: "0px"
         }}>
             {children}
         </body>
