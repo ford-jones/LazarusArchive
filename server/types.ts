@@ -23,6 +23,6 @@ export type CollectionId = "posts" | "changeLogs"
 export type CollectionData = BlogPost | ChangeLog
 
 export interface DatabaseManager {
-    getAll: (collectionId: CollectionId) => Promise<FindCursor<WithId<Document>>>,
+    getAll: (collectionId: CollectionId) => Promise<Array<WithId<Document>>>,
     addDocument: (collectionId: CollectionId, data: CollectionData) => Promise<InsertOneResult>
 }

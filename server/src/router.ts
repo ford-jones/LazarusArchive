@@ -20,20 +20,20 @@ router.get("/getAllPosts", async (req, res): Promise<void> => {
     const database = await db()
     const data = await database.getAll("posts")
 
-    const scanDocs: FindCursor<WithId<Document>> = data.map((blogPost: WithId<Document>) => blogPost)
-    const documents: Array<WithId<Document>> = await scanDocs.toArray()
+    // const scanDocs: FindCursor<WithId<Document>> = data.map((blogPost: WithId<Document>) => blogPost)
+    // const documents: Array<WithId<Document>> = await scanDocs.toArray()
 
-    res.status(StatusCodes.OK).json(documents)
+    res.status(StatusCodes.OK).json(data)
 })
 
 router.get("/getAllChangeLogs", async (req, res): Promise<void> => {
     const database = await db()
     const data = await database.getAll("changeLogs")
 
-    const scanDocs: FindCursor<WithId<Document>> = data.map((blogPost: WithId<Document>) => blogPost)
-    const documents: Array<WithId<Document>> = await scanDocs.toArray()
+    // const scanDocs: FindCursor<WithId<Document>> = data.map((blogPost: WithId<Document>) => blogPost)
+    // const documents: Array<WithId<Document>> = await scanDocs.toArray()
 
-    res.status(StatusCodes.OK).json(documents)
+    res.status(StatusCodes.OK).json(data)
 })
 
 router.post("/addPost", async (req, res): Promise<void> => {
@@ -42,11 +42,7 @@ router.post("/addPost", async (req, res): Promise<void> => {
     const data: BlogPost = req.body
     const result = await database.addDocument("posts", data)
 
-    if(result.acknowledged == true) {
-        res.status(StatusCodes.OK).json(result)
-    } else {
-        res.status(StatusCodes.INTERNAL_SERVER_ERROR)
-    }
+    res.status(StatusCodes.OK).json(result)
 })
 
 router.post("/addChangeLog", async (req, res): Promise<void> => {
@@ -55,9 +51,5 @@ router.post("/addChangeLog", async (req, res): Promise<void> => {
     const data: ChangeLog = req.body
     const result = await database.addDocument("changeLogs", {...data, date: new Date().toISOString()})
 
-    if(result.acknowledged == true) {
-        res.status(StatusCodes.OK).json(result)
-    } else {
-        res.status(StatusCodes.INTERNAL_SERVER_ERROR)
-    }
+    res.status(StatusCodes.OK).json(result)
 })
