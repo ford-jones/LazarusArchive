@@ -33,6 +33,8 @@ export const db = async (): Promise<DatabaseManager> => {
             } catch (error) {
                 console.error(error)
                 console.trace()
+            } finally {
+                client.close()
             }
         },
 
@@ -47,6 +49,8 @@ export const db = async (): Promise<DatabaseManager> => {
             } catch (error) {
                 console.error(error)
                 console.trace()
+            } finally {
+                client.close()
             }
         }
     }
