@@ -4,13 +4,12 @@ import React, { useEffect, useState } from "react"
 import MarkdownPreview from "@uiw/react-markdown-preview"
 
 export default function Docs(): React.ReactNode {
-    const [activePage, setActivePage] = useState<string>("lazarus-by-example.md")
     const [markdownSource, setMarkdownSource] = useState<string>("")
     const [loading, setLoading] = useState<boolean>(true)
 
     useEffect(() => {
         getDocs()
-    }, [activePage])
+    }, [])
 
     const getDocs = async (): Promise<void> => {
         setLoading(true)
