@@ -1,20 +1,10 @@
-import NavBar from "../components/NavBar";
+import NavBar from "../components/NavBar"
 
 export default function Home(): React.JSX.Element {
   return (
     <>
-      <div style={{
-        zIndex: 1, 
-        position: "fixed", 
-        width: "100%", 
-        background: "black",
-        top: "0px",
-        left: "0px"
-      }}>
-        <h1 style={{textAlign: "center", textDecoration: "underline"}}>Lazarus Engine - Archive:</h1>
-        <NavBar />
-      </div>
-      <div style={{paddingTop: "160px", width:"80%", margin:"auto"}}>
+      <NavBar />
+      <div style={{paddingTop: "9em", width:"80%", margin:"auto"}}>
         <p>
           Welcome to the development log for Lazarus engine, a 3D game engine written in the C++17 standard. 
           The engine provides an abstraction in the form of an API over OpenGL 4.1, GLFW, FMOD and FreeType2 developed by Ford Jones.
@@ -54,8 +44,8 @@ export default function Home(): React.JSX.Element {
         <p>
           Find the source code for the project <a style={{color: "whitesmoke"}}href="https://github.com/ford-jones/Lazarus">here</a>. 
         </p>
-        <p>Email: <a style={{color: "whitesmoke"}}href="mail:fordnicholasjones@gmail.com">fordjones@tutamail.com</a></p>
-        <p>Matrix: <a style={{color: "whitesmoke"}}href="@public_member:matrix.org">@public_member:matrix.org</a>, <a style={{color: "whitesmoke"}}href="#lazarusengine:matrix.org">#lazarusengine:matrix.org</a></p>
+        <p>Email: <a style={{color: "whitesmoke"}}href="mail:fordnicholasjones@gmail.com">fordjones@tutamail.com</a> -- Matrix: <a style={{color: "whitesmoke"}}href="@public_member:matrix.org">@public_member:matrix.org</a>, <a style={{color: "whitesmoke"}}href="#lazarusengine:matrix.org">#lazarusengine:matrix.org</a></p>
+        {/* <p>Matrix: <a style={{color: "whitesmoke"}}href="@public_member:matrix.org">@public_member:matrix.org</a>, <a style={{color: "whitesmoke"}}href="#lazarusengine:matrix.org">#lazarusengine:matrix.org</a></p> */}
       </div>
     </>
   );

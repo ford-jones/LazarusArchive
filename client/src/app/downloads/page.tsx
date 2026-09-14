@@ -6,17 +6,7 @@ import Releases from "@/components/Releases"
 export default function Downloads(): React.JSX.Element {
     return(
         <>
-            <div style={{
-                zIndex: 1, 
-                position: "fixed", 
-                width: "100%", 
-                background: "black",
-                top: "0px",
-                left: "0px"
-            }}>
-                <h1 style={{textAlign: "center", textDecoration: "underline"}}>Downloads:</h1>
-                <NavBar />
-            </div>
+            <NavBar />
             <div style={{paddingTop: "160px", width:"80%", margin:"auto"}}>
                 <Releases />
             </div>

@@ -6,17 +6,7 @@ import NavBar from "../../components/NavBar"
 export default function Blog(): React.ReactNode {
     return(
         <>
-            <div style={{
-                zIndex: 1, 
-                position: "fixed", 
-                width: "100%", 
-                background: "black",
-                top: "0px",
-                left: "0px"
-            }}>
-                <h1 style={{textAlign: "center", textDecoration: "underline"}}>Blog:</h1>
-                <NavBar />
-            </div>
+            <NavBar />
             <div style={{paddingTop: "160px", width:"80%", margin:"auto"}}>
                 <BlogUpdates />
             </div>
