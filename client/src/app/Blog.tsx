@@ -1,14 +1,15 @@
 import React from "react"
-import NavBar from "../../components/NavBar"
 
-import Releases from "@/components/Releases"
+import BlogUpdates from "@/components/BlogUpdates"
+import NavBar from "@/components/NavBar"
 
-export default function Downloads(): React.JSX.Element {
+
+export default function Blog(): React.ReactNode {
     return(
         <>
             <NavBar />
             <div style={{paddingTop: "160px", width:"80%", margin:"auto"}}>
-                <Releases />
+                <BlogUpdates />
             </div>
         </>
     )
