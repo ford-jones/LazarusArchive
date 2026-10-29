@@ -1,11 +1,9 @@
-"use client"
 import React from "react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { Link } from "react-router"
 import { useState, useEffect } from "react"
 
 export default function NavBar(): React.JSX.Element {
-    const path = usePathname()
+    const urlParams = window.location.pathname
     const [winSize, setWinSize] = useState<number>(0)
     const [fontHeight, setFontHeight] = useState<number>(0)
     const [pageName, setPageName] = useState<string>("")
@@ -21,15 +19,15 @@ export default function NavBar(): React.JSX.Element {
             setFontHeight(12)
           }
         }
-
-        if(path.length == 1) {
+        
+        if(urlParams.length === 1) {
             setPageName("Lazarus Archive:")
         } else {
-            const name = path.substring(1).concat(":").toLowerCase()
+            const name = urlParams.substring(1).concat(":").toLowerCase()
             const title = name.charAt(0).toUpperCase().concat(name.substring(1))
             setPageName(title)
         }
-    }, [path])
+    }, [urlParams])
 
     return(
         <>
@@ -46,19 +44,19 @@ export default function NavBar(): React.JSX.Element {
                 </div>
                 <h1 style={{textAlign: "center", textDecoration: "underline"}}>{pageName}</h1>
                 <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between", width: "80%", margin:"auto", padding: "5px 0px", fontSize: `${fontHeight}px`}}>
-                    <Link href={"/"} style={path === "/" ? {color: "whitesmoke", textDecoration: "underline"} : {color: "whitesmoke", textDecoration: "none"}}>
+                    <Link to={"/"} style={urlParams === "/" ? {color: "whitesmoke", textDecoration: "underline"} : {color: "whitesmoke", textDecoration: "none"}}>
                         Home
                     </Link>
-                    <Link href={"/documentation"} style={path === "/documentation" ? {color: "whitesmoke", textDecoration: "underline"} : {color: "whitesmoke", textDecoration: "none"}}>
+                    <Link to={"/documentation"} style={urlParams === "/documentation" ? {color: "whitesmoke", textDecoration: "underline"} : {color: "whitesmoke", textDecoration: "none"}}>
                         Documentation
                     </Link>
-                    <Link href={"/changeLogs"} style={path === "/changeLogs" ? {color: "whitesmoke", textDecoration: "underline"} : {color: "whitesmoke", textDecoration: "none"}}>
+                    <Link to={"/changeLogs"} style={urlParams === "/changeLogs" ? {color: "whitesmoke", textDecoration: "underline"} : {color: "whitesmoke", textDecoration: "none"}}>
                         Release Notes
                     </Link>
-                    <Link href={"/downloads"} style={path === "/downloads" ? {color: "whitesmoke", textDecoration: "underline"} : {color: "whitesmoke", textDecoration: "none"}}>
+                    <Link to={"/downloads"} style={urlParams === "/downloads" ? {color: "whitesmoke", textDecoration: "underline"} : {color: "whitesmoke", textDecoration: "none"}}>
                         Downloads
                     </Link>
-                    <Link href={"/blog"} style={path === "/blog" ? {color: "whitesmoke", textDecoration: "underline"} : {color: "whitesmoke", textDecoration: "none"}}>
+                    <Link to={"/blog"} style={urlParams === "/blog" ? {color: "whitesmoke", textDecoration: "underline"} : {color: "whitesmoke", textDecoration: "none"}}>
                         Blog
                     </Link>
                 </div>

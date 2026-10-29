@@ -1,5 +1,3 @@
-"use client"
-
 import React, { useState, useEffect, useCallback } from "react"
 import { getChangeLogs } from "@/utils/api"
 import { ChangeLog } from "@/utils/types"
