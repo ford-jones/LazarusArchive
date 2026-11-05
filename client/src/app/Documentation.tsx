@@ -7,7 +7,7 @@ export default function Documentation(): React.ReactNode {
     return(
         <>
             <NavBar />
-            <div style={{paddingTop: "105px"}}>
+            <div style={{paddingTop: "150px"}}>
                 <Docs />
             </div>
         </>

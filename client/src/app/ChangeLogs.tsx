@@ -7,7 +7,7 @@ export default function ChangeLogs(): React.ReactNode {
     return(
         <>
             <NavBar />
-            <div style={{paddingTop: "105px", width:"80%", margin:"auto"}}>
+            <div style={{paddingTop: "150px", width:"80%", margin:"auto"}}>
                 <p>This project uses <Link to={"https://semver.org/#summary"} style={{color: "whitesmoke", textDecoration: "underline"}}>SemVer</Link>.</p>
                 <ChangeLogUpdates />
             </div>
