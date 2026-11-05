@@ -1,5 +1,3 @@
-"use client"
-
 import React, { useState, useEffect, useCallback } from "react"
 import { getBlogPosts } from "@/utils/api"
 import { BlogPost } from "@/utils/types"

@@ -1,10 +1,8 @@
-"use client"
-
 import React, { useState, useEffect, useCallback } from "react"
+import { Link } from "react-router"
 
 import { getChangeLogs } from "@/utils/api"
 import { ChangeLog } from "@/utils/types"
-import Link from "next/link"
 
 interface DownloadLink {
     version: string,
@@ -47,7 +45,7 @@ export default function Releases(): React.ReactNode {
                     : downloads
                     ? downloads.map((download, i) => (
                         <li key={i}>
-                            <Link href={download.url} style={{color: "whitesmoke", textDecoration: "underline"}}>{download.version}</Link>
+                            <Link to={download.url} style={{color: "whitesmoke", textDecoration: "underline"}}>{download.version}</Link>
                         </li>
                     ))
                     : <p>Uh oh! Something went wrong.</p>

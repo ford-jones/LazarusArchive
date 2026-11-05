@@ -1,6 +1,6 @@
 import { BlogPost, ChangeLog } from "./types"
 
-const _endpoint = process.env.NEXT_PUBLIC_SERVER_ENDPOINT as string
+const _endpoint = import.meta.env.VITE_SERVER_ENDPOINT as string
 
 export const getBlogPosts = async (): Promise<Array<BlogPost> | void> => {
     const data = await fetch(`${_endpoint}/getAllPosts`, {
